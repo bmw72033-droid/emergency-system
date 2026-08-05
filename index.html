@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Emergency System</title>
+<title>Citizen Emergency Report</title>
 </head>
 
 <body>
 
-<h1>🚑 Emergency Community System</h1>
+<h1>🚨 Report Emergency</h1>
 
-<h2>Select Access</h2>
+<p>Describe the situation:</p>
 
-<a href="index.html">👤 Citizen Report</a>
+<textarea id="description" rows="5" cols="40"></textarea>
+
 <br><br>
 
-<a href="operator.html">🖥️ Operator Control Room</a>
-<br><br>
+<button onclick="sendReport()">
+Send Emergency Report
+</button>
 
-<a href="dispatch.html">🚑 Dispatch Unit</a>
+
+<script>
+
+function sendReport(){
+
+    let description =
+    document.getElementById("description").value;
+
+    alert(
+    "Report received:\n" + description
+    );
+
+}
+
+</script>
+
 
 </body>
+
 </html>
