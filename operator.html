@@ -3,17 +3,44 @@
 
 <head>
     <title>Operator Control Room</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+
 </head>
 
 <body>
 
 <h1>🖥️ Emergency Operator Control Room</h1>
 
-<h2>Incoming Reports</h2>
+<div id="map"></div>
 
-<div id="reports">
-    No active reports.
-</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+
+var map = L.map('map').setView([35.6892, 51.3890], 12);
+
+L.tileLayer(
+'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+    attribution: 'OpenStreetMap'
+}
+).addTo(map);
+
+
+var marker = L.marker([35.6892, 51.3890])
+.addTo(map)
+.bindPopup("Test Emergency Point")
+.openPopup();
+
+</script>
 
 </body>
 
